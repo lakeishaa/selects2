@@ -72,7 +72,7 @@ header h1 {
 /* Yellow square when selected */
 #radio-group input[type="radio"]:checked + label::before {
   background-color: #F97BED;
-  border-color: rgb(255, 255, 255);
+  border-color: white;
 }
 
 #radio-group label:hover::before {
