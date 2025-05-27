@@ -83,65 +83,53 @@
         padding: 0px;
       }
 
-      .switch {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        display: inline-block;
-        width: 60px;
-        height: 34px;
-        background-color: none;
-      }
+      #radio-group {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-family: "IBM Plex Sans", sans-serif;
+      display: flex;
+      gap: 12px;
+      z-index: 1000;
+    }
 
-      .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-      }
+    #radio-group label {
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+      padding-left: 24px;
+    }
 
-      .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ff7cec;
-        transition: 0.4s;
-      }
+    /* Hide native radio button */
+    #radio-group input[type="radio"] {
+      display: none;
+    }
 
-      .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        transition: 0.4s;
-      }
+    /* Custom square box */
+    #radio-group label::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      border: 2px dotted rgb(255, 255, 255);
+      background-color: transparent;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: background-color 0.2s ease;
+    }
 
-      input:checked + .slider {
-        background-color: #0158dd;
-      }
+    /* Yellow square when selected */
+    #radio-group input[type="radio"]:checked + label::before {
+      background-color: #F97BED;
+      border-color: rgb(255, 255, 255);
+    }
 
-      input:checked + .slider:before {
-        transform: translateX(26px);
-      }
-
-      /* Rounded sliders */
-      .slider.round {
-        border-radius: 34px;
-      }
-
-      .slider.round:before {
-        border-radius: 50%;
-      }
-
-      label.switch {
-        transform: scale(0.6);
-        background-color: none;
-      }
     </style>
   </head>
   <body>
@@ -151,58 +139,35 @@
       </div>
     </div>
 
-    <div>
-      <label class="switch">
-        <input type="checkbox" id="toggleSwitch" />
-        <span class="slider round"></span>
-      </label>
+    <div id="radio-group">
+      <input type="radio" id="default" name="viewMode" value="default" checked>
+      <label for="default"> </label>
+    
+      <input type="radio" id="gothic" name="viewMode" value="gothic">
+      <label for="gothic"> </label>
+    
+      <input type="radio" id="chrome" name="viewMode" value="chrome">
+      <label for="chrome"> </label>
     </div>
-
-    <!-- <div id="radio-container">
-      <input type="radio" name="color" id="red" value="red" />
-      <label for="red"><span class="red"></span></label>
-
-      <input type="radio" name="color" id="green" />
-      <label for="green"><span class="green"></span></label>
-
-      <input type="radio" name="color" id="yellow" />
-      <label for="yellow"><span class="yellow"></span></label>
-
-      <input type="radio" name="color" id="olive" />
-      <label for="olive"><span class="olive"></span></label>
-
-      <input type="radio" name="color" id="orange" />
-      <label for="orange"><span class="orange"></span></label>
-
-      <input type="radio" name="color" id="teal" />
-      <label for="teal"><span class="teal"></span></label>
-
-      <input type="radio" name="color" id="blue" />
-      <label for="blue"><span class="blue"></span></label>
-
-      <input type="radio" name="color" id="violet" />
-      <label for="violet"><span class="violet"></span></label>
-
-      <input type="radio" name="color" id="purple" />
-      <label for="purple"><span class="purple"></span></label>
-
-      <input type="radio" name="color" id="pink" />
-      <label for="pink"><span class="pink"></span></label>
-    </div> -->
+    
 
     <script>
-      document
-        .getElementById("toggleSwitch")
-        .addEventListener("change", function () {
+      const radios = document.querySelectorAll('input[name="viewMode"]');
+      radios.forEach(radio => {
+        radio.addEventListener("change", function () {
           if (this.checked) {
-            window.location.href =
-              "https://lakeishaa.github.io/selects/gothic/index.html"; // Change to your target URL
-          } else {
-            window.location.href =
-              "https://lakeishaa.github.io/selects/gothic/index.html"; // Change to your default URL
+            if (this.value === "gothic") {
+              window.location.href = "https://lakeishaa.github.io/selects2/gothic/index.html";
+            } else if (this.value === "chrome") {
+              window.location.href = "https://lakeishaa.github.io/selects2/chrome/index.html";
+            } else {
+              window.location.href = "https://lakeishaa.github.io/selects/";
+            }
           }
         });
+      });
     </script>
+    
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"

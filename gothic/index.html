@@ -14,11 +14,17 @@
   </head>
   <body>
 
-    <label class="switch">
-      <input type="checkbox" id="toggleSwitch" checked />
-      <span class="slider round"></span>
-      <!-- why isnt this not working -->
-    </label>
+    <div id="radio-group">
+      <input type="radio" id="default" name="viewMode" value="default">
+      <label for="default"> </label>
+    
+      <input type="radio" id="gothic" name="viewMode" value="gothic" checked>
+      <label for="gothic"> </label>
+    
+      <input type="radio" id="chrome" name="viewMode" value="chrome">
+      <label for="chrome"> </label>
+    </div>
+    
 
     <div class="grid">
       <!-- Rows and Columns -->

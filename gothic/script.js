@@ -1,9 +1,16 @@
-document.getElementById("toggleSwitch").addEventListener("change", function () {
-  if (this.checked) {
-    window.location.href = "https://lakeishaa.github.io/selects/"; // Change to your target URL
-  } else {
-    window.location.href = "https://lakeishaa.github.io/selects/"; // Change to your default URL
-  }
+const radios = document.querySelectorAll('input[name="viewMode"]');
+radios.forEach(radio => {
+  radio.addEventListener("change", function () {
+    if (this.checked) {
+      if (this.value === "gothic") {
+        window.location.href = "https://lakeishaa.github.io/selects2/gothic/index.html";
+      } else if (this.value === "chrome") {
+        window.location.href = "https://lakeishaa.github.io/selects2/chrome/index.html";
+      } else {
+        window.location.href = "https://lakeishaa.github.io/selects/";
+      }
+    }
+  });
 });
 
 const colors = [
