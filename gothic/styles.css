@@ -99,5 +99,5 @@ body {
 
 #radio-group label:hover::before {
   background-color: #EDFF7A; /* light yellow */
-  border-color: rgb(255, 255, 255);
+  border-color: #0058DD;
 }
