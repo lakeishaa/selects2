@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   /* background-color: rgb(24, 162, 241); */
-  background-color: white;
+  background-color: #F0F0F0;
   /* background-color: #8fafc4; */
 }
 
@@ -60,7 +60,7 @@ header h1 {
   content: "";
   width: 16px;
   height: 16px;
-  border: 2px dotted #F97BED;
+  border: 2px dotted #A4A6B9;
   background-color: transparent;
   position: absolute;
   left: 0;
@@ -71,11 +71,11 @@ header h1 {
 
 /* Yellow square when selected */
 #radio-group input[type="radio"]:checked + label::before {
-  background-color: #F97BED;
+  background-color: #A4A6B9;
   border-color: white;
 }
 
 #radio-group label:hover::before {
   background-color: #EDFF7A; /* light yellow */
-  border-color: rgb(255, 255, 255);
+  border-color: #A4A6B9;
 }

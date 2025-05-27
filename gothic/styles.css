@@ -82,7 +82,7 @@ body {
   content: "";
   width: 16px;
   height: 16px;
-  border: 2px dotted rgb(255, 255, 255);
+  border: 2px dotted #0058DD;
   background-color: transparent;
   position: absolute;
   left: 0;
@@ -93,7 +93,7 @@ body {
 
 /* Yellow square when selected */
 #radio-group input[type="radio"]:checked + label::before {
-  background-color: #F97BED;
+  background-color: #0058DD;
   border-color: rgb(255, 255, 255);
 }
 
