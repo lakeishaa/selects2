@@ -25,3 +25,57 @@ header h1 {
   top: 0;
   left: 0;
 }
+
+
+/* radio */
+#radio-group {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-family: "IBM Plex Sans", sans-serif;
+  display: flex;
+  gap: 12px;
+  z-index: 1000;
+}
+
+#radio-group label {
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  padding-left: 24px;
+}
+
+/* Hide native radio button */
+#radio-group input[type="radio"] {
+  display: none;
+}
+
+/* Custom square box */
+#radio-group label::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 2px dotted rgb(255, 255, 255);
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.2s ease;
+}
+
+/* Yellow square when selected */
+#radio-group input[type="radio"]:checked + label::before {
+  background-color: #F97BED;
+  border-color: rgb(255, 255, 255);
+}
+
+#radio-group label:hover::before {
+  background-color: #EDFF7A; /* light yellow */
+  border-color: rgb(255, 255, 255);
+}

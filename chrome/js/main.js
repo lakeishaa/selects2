@@ -1,3 +1,18 @@
+const radios = document.querySelectorAll('input[name="viewMode"]');
+radios.forEach(radio => {
+  radio.addEventListener("change", function () {
+    if (this.checked) {
+      if (this.value === "gothic") {
+        window.location.href = "https://lakeishaa.github.io/selects2/gothic/index.html";
+      } else if (this.value === "chrome") {
+        window.location.href = "https://lakeishaa.github.io/selects2/chrome/index.html";
+      } else {
+        window.location.href = "https://lakeishaa.github.io/selects2/";
+      }
+    }
+  });
+});
+
 // Import Three.js and required modules
 import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
 import { RGBELoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/RGBELoader.js";
