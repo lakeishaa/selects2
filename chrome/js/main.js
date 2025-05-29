@@ -91,16 +91,25 @@ scene.add(dirLight);
 // Track mouse position
 const mouse = new THREE.Vector2();
 
-// Add event listener for mouse movement
 window.addEventListener("mousemove", (event) => {
   // Normalize mouse position to range [-1, 1]
   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
   // Update the light position
-  const lightDistance = 10; // Adjust the distance of the light
+  const lightDistance = 10;
   dirLight.position.set(mouse.x * lightDistance, mouse.y * lightDistance, 5);
+
+  // Interpolate color based on mouse X position
+  const t = (mouse.x + 1) / 2; // Convert from [-1,1] to [0,1]
+  const color = new THREE.Color().lerpColors(
+    new THREE.Color("#F97BED"),
+    new THREE.Color("#0058DD"),
+    t
+  );
+  dirLight.color.set(color);
 });
+
 
 // Handle window resize
 window.addEventListener("resize", () => {
