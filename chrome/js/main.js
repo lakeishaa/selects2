@@ -104,7 +104,7 @@ window.addEventListener("mousemove", (event) => {
   const t = (mouse.x + 1) / 2; // Convert from [-1,1] to [0,1]
   const color = new THREE.Color().lerpColors(
     new THREE.Color("#F97BED"),
-    new THREE.Color("#0058DD"),
+    new THREE.Color("#CAFF7A"),
     t
   );
   dirLight.color.set(color);
