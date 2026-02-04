@@ -74,6 +74,8 @@ radios.forEach((radio) => {
       window.location.href = "https://lakeishaa.github.io/selects2/gothic/index.html";
     } else if (this.value === "chrome") {
       window.location.href = "https://lakeishaa.github.io/selects2/chrome/index.html";
+    } else if (this.value === "barbie") {
+      window.location.href = "https://lakeishaa.github.io/selects2/barbie/index.html";
     } else {
       window.location.href = "https://lakeishaa.github.io/selects2/";
     }
